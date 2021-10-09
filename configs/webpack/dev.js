@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const commonConfig = require('./');
 const webpack = require('webpack');
 
@@ -14,8 +14,7 @@ module.exports = merge(commonConfig, {
   devServer: {
     hot: true, // enable HMR on the server
     port: 8080,
-    contentBase: ['./src', './public'],
-    watchContentBase: true
+    static: ['./src', './public'],
   },
   output: {
     publicPath: '/'

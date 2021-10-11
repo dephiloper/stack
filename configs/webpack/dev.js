@@ -2,7 +2,6 @@
 
 const { merge } = require('webpack-merge');
 const commonConfig = require('./');
-const webpack = require('webpack');
 
 module.exports = merge(commonConfig, {
   mode: 'development',
@@ -19,7 +18,4 @@ module.exports = merge(commonConfig, {
   output: {
     publicPath: '/'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin() // prints more readable module names in the browser console on HMR updates
-  ],
 });
